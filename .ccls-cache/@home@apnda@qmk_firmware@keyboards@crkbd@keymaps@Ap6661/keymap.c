@@ -25,9 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* bool oled_enabled = true; */
 /* #endif */
 
-//
-// Maybe make a OLED toggle?
-//
 /* bool process_record_user(uint16_t keycode, keyrecord_t *record) { */
 /*     switch (keycode) { */
 /**/
@@ -109,6 +106,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation)
 {
     if (!is_keyboard_master())
     {
+        /* return OLED_ROTATION_90; */
         return OLED_ROTATION_0;
     }
     return rotation;
@@ -171,11 +169,17 @@ void static render_status(void)
         }
 }
 
+void render_animation(uint8_t frame)
+{
+    oled_write_raw_P(animation[frame], sizeof(animation[frame]));
+}
+
 bool oled_task_user(void)
 {
     if (is_keyboard_master()) {
         render_status();
     } else {
+        /* render_animation((timer_read() / 60) % 8); */
         render_image();
     }
     return false;
