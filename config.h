@@ -55,4 +55,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define IDLE_TIMEOUT_MS 60000
 
+#define TAPPING_TOGGLE 3
+
 #define SPLIT_WATCHDOG_ENABLE
