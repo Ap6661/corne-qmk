@@ -20,28 +20,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 
-
-/* #ifdef OLED_ENABLE */
-/* bool oled_enabled = true; */
-/* #endif */
+enum {
+    MAC_SQN = SAFE_RANGE,
+    OSM_ALT = OSM(MOD_LALT),
+    OSM_SFT = OSM(MOD_LSFT),
+};
 
 //
 // Maybe make a OLED toggle?
 //
-/* bool process_record_user(uint16_t keycode, keyrecord_t *record) { */
-/*     switch (keycode) { */
-/**/
-/* #ifdef OLED_ENABLE */
-/*         case PB_1: */
-/*             if (record->event.pressed) { */
-/*                 oled_enabled = !oled_enabled;  // toggle oled_enabled */
-/*             } */
-/*             break; */
-/* #endif */
-/**/
-/*     } */
-/*     return true; */
-/* } */
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode) {
+            case MAC_SQN:
+                SEND_STRING(">~<");
+                return false; break;
+        }
+    }
+    return true;
+}
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -51,11 +48,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-OSM(MOD_LSFT),    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
+      OSM_SFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   TT(1),  KC_SPC,     KC_ENT,   TT(2),     OSM(MOD_LALT)
+                                          KC_LGUI,   TT(1),  KC_SPC,     KC_ENT,   TT(2), OSM_ALT
                                       //`--------------------------'  `--------------------------'
-
   ),
 
     [1] = LAYOUT_split_3x6_3(
@@ -66,7 +62,7 @@ OSM(MOD_LSFT),    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_LGUI, _______,  KC_SPC,     KC_ENT,   TO(3),    OSM(MOD_LALT)
+                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   TO(3), OSM_ALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -74,11 +70,11 @@ OSM(MOD_LSFT),    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, MAC_SQN, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   TO(3),  KC_SPC,     KC_ENT, _______,     OSM(MOD_LALT)
+                                          KC_LGUI,   TO(3),  KC_SPC,     KC_ENT, _______, OSM_ALT
                                       //`--------------------------'  `--------------------------'
     ),
 
