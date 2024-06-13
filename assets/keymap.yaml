@@ -1,0 +1,174 @@
+layout: {qmk_keyboard: crkbd/rev1, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  L0:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LCTL
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - OSM SFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - ESC
+  - LGUI
+  - {t: L1, h: tap-toggle}
+  - SPC
+  - ENT
+  - {t: L2, h: tap-toggle}
+  - OSM ALT
+  L1:
+  - TAB
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - LCTL
+  - F1
+  - PGUP
+  - PGDN
+  - INS
+  - PSCR
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - F12
+  - '`'
+  - CAPS
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - '~'
+  - LGUI
+  - {type: held}
+  - SPC
+  - ENT
+  - {t: L3, h: toggle}
+  - OSM ALT
+  L2:
+  - TAB
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - BSPC
+  - LCTL
+  - ''
+  - ''
+  - ''
+  - MAC SQN
+  - ''
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - \
+  - '`'
+  - LSFT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
+  - '~'
+  - LGUI
+  - {t: L3, h: toggle}
+  - SPC
+  - ENT
+  - {type: held}
+  - OSM ALT
+  L3:
+  - QK BOOT
+  - QK RBT
+  - ''
+  - BRIU
+  - VOLU
+  - MNXT
+  - ACL0
+  - ACL1
+  - ACL2
+  - ''
+  - WH U
+  - DEL
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - BRID
+  - VOLD
+  - MPLY
+  - MS L
+  - MS D
+  - MS U
+  - MS R
+  - WH D
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - MUTE
+  - MPRV
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: L0, h: toggle}
+  - LGUI
+  - {t: L0, h: toggle}
+  - LALT
+  - BTN1
+  - BTN3
+  - BTN2
