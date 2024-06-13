@@ -132,34 +132,34 @@ layers:
   L3:
   - QK BOOT
   - QK RBT
-  - ''
-  - BRIU
-  - VOLU
   - MNXT
+  - BRIU
+  - WH U
+  - VOLU
   - ACL0
   - ACL1
   - ACL2
   - ''
-  - WH U
+  - ''
   - DEL
   - {t: ▽, type: trans}
   - ''
-  - ''
-  - BRID
-  - VOLD
   - MPLY
+  - BRID
+  - WH D
+  - VOLD
   - MS L
   - MS D
   - MS U
   - MS R
-  - WH D
+  - ''
   - ''
   - {t: ▽, type: trans}
   - ''
+  - MPRV
   - ''
   - ''
   - MUTE
-  - MPRV
   - ''
   - ''
   - ''
