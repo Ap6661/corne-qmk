@@ -26,6 +26,13 @@ enum {
     OSM_SFT = OSM(MOD_LSFT),
 };
 
+const uint16_t PROGMEM altmouse[] = { KC_SLSH, KC_ESC, COMBO_END };
+const uint16_t PROGMEM boot[] = { KC_HOME, KC_DEL, COMBO_END };
+combo_t key_combos[] = {
+    COMBO(altmouse, TO(3)),
+    COMBO(boot, QK_BOOT)
+};
+
 //
 // Maybe make a OLED toggle?
 //
@@ -80,11 +87,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_BOOT,  QK_RBT, KC_MNXT, KC_BRIU, KC_WH_U, KC_VOLU,                      KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX,  KC_DEL,
+      XXXXXXX, XXXXXXX, KC_MNXT, KC_BRIU, KC_WH_U, KC_VOLU,                      KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, KC_HOME,  KC_DEL,
   //|--------+--------+--------|--------+--------+--------+                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, KC_MPLY, KC_BRID, KC_WH_D, KC_VOLD,                      KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX, XXXXXXX,
+      _______, XXXXXXX, KC_MPLY, KC_BRID, KC_WH_D, KC_VOLD,                      KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,  KC_END, XXXXXXX,
   //|--------+--------+--------|--------+--------+--------+                    |--------+--------+--------+--------+--------+--------|
-      _______, XXXXXXX, KC_MPRV, XXXXXXX, XXXXXXX, KC_MUTE,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TO(0),
+      _______, XXXXXXX, KC_MPRV, KC_WH_L, KC_WH_R, KC_MUTE,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TO(0),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   TO(0), KC_LALT,    KC_BTN1, KC_BTN3, KC_BTN2
                                       //`--------------------------'  `--------------------------'

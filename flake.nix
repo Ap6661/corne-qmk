@@ -18,6 +18,8 @@
         ${pkgs.qmk}/bin/qmk c2json ./keymap.c |
         ${keymapApp}/bin/keymap parse -q - > assets/keymap.yaml;
 
+        ${pkgs.coreutils}/bin/cat assets/combos.yaml >> assets/keymap.yaml;
+
         ${pkgs.coreutils}/bin/cat assets/macros |
         ${pkgs.findutils}/bin/xargs -I '{}' ${pkgs.gnused}/bin/sed -i 's/{}/g' assets/keymap.yaml
 

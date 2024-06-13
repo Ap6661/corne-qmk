@@ -130,8 +130,8 @@ layers:
   - {type: held}
   - OSM ALT
   L3:
-  - QK BOOT
-  - QK RBT
+  - ''
+  - ''
   - MNXT
   - BRIU
   - WH U
@@ -140,7 +140,7 @@ layers:
   - ACL1
   - ACL2
   - ''
-  - ''
+  - HOME
   - DEL
   - {t: ▽, type: trans}
   - ''
@@ -152,13 +152,13 @@ layers:
   - MS D
   - MS U
   - MS R
-  - ''
+  - END
   - ''
   - {t: ▽, type: trans}
   - ''
   - MPRV
-  - ''
-  - ''
+  - WH L
+  - WH R
   - MUTE
   - ''
   - ''
@@ -172,3 +172,6 @@ layers:
   - BTN1
   - BTN3
   - BTN2
+combos:
+  - { p: [34, 35], k: TO(3), l: [L0]}
+  - { p: [10, 11], k: BOOT, l: [L3]}
