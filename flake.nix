@@ -13,9 +13,12 @@
   in
   {
     packages.${system}.default = pkgs.writeShellScriptBin "draw-keymap" ''
+        sudo ${pkgs.qmk}/bin/qmk flash;
+        sudo ${pkgs.qmk}/bin/qmk flash;
         ${pkgs.qmk}/bin/qmk c2json ./keymap.c |
         ${keymapApp}/bin/keymap parse -q - > assets/keymap.yaml;
         ${keymapApp}/bin/keymap draw assets/keymap.yaml > assets/keymap.svg
+        echo Images Updated!
     '';
   };
 
