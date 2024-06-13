@@ -20,6 +20,12 @@
         ${keymapApp}/bin/keymap draw assets/keymap.yaml > assets/keymap.svg
         echo Images Updated!
     '';
+    devShells.${system}.default = pkgs.mkShellNoCC {
+        packages = [
+            keymapApp
+            pkgs.qmk
+        ];
+    };
   };
 
 }
