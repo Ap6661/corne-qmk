@@ -17,4 +17,3 @@ Run `nix run` to flash both halves. This will also update the image in the readm
 # Macros
 | Keycode | Macro |
 |---|---|
-|  MAC SQN  |  \'>~<\'  |
