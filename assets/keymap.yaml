@@ -68,7 +68,7 @@ layers:
   - RIGHT
   - F12
   - '`'
-  - CAPS
+  - LSFT
   - F2
   - F3
   - F4
@@ -111,7 +111,7 @@ layers:
   - ']'
   - \
   - '`'
-  - LSFT
+  - CAPS
   - ''
   - ''
   - ''
