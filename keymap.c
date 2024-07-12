@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 enum {
     MAC_SQN = SAFE_RANGE,
+    MAC_ABR,
     OSM_ALT = OSM(MOD_LALT),
     OSM_SFT = OSM(MOD_LSFT),
 };
@@ -41,6 +42,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         switch (keycode) {
             case MAC_SQN:
                 SEND_STRING(">~<");
+                return false; break;
+            case MAC_ABR:
+                SEND_STRING("<>"SS_TAP(X_LEFT));
                 return false; break;
         }
     }
@@ -79,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, MAC_SQN, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
+      KC_CAPS, XXXXXXX, XXXXXXX, MAC_ABR, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   TO(3),  KC_SPC,     KC_ENT, _______, OSM_ALT
                                       //`--------------------------'  `--------------------------'
