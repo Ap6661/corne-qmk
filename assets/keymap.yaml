@@ -38,12 +38,55 @@ layers:
   - /
   - ESC
   - LGUI
-  - {t: L1, h: tap-toggle}
+  - {t: L2, h: tap-toggle}
   - SPC
   - ENT
-  - {t: L2, h: tap-toggle}
+  - {t: L3, h: tap-toggle}
   - OSM ALT
   L1:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LCTL
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LSFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: L0, h: toggle}
+  - ESC
+  - {t: ▽, type: trans}
+  - SPC
+  - ENT
+  - {t: ▽, type: trans}
+  - OSM ALT
+  L2:
   - TAB
   - '1'
   - '2'
@@ -84,9 +127,9 @@ layers:
   - {type: held}
   - SPC
   - ENT
-  - {t: L3, h: toggle}
+  - {t: L4, h: toggle}
   - OSM ALT
-  L2:
+  L3:
   - TAB
   - '!'
   - '@'
@@ -124,13 +167,13 @@ layers:
   - '|'
   - '~'
   - LGUI
-  - {t: L3, h: toggle}
+  - {t: L4, h: toggle}
   - SPC
   - ENT
   - {type: held}
   - OSM ALT
-  L3:
-  - ''
+  L4:
+  - {t: L1, h: toggle}
   - ''
   - MNXT
   - BRIU

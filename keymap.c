@@ -30,7 +30,7 @@ enum {
 const uint16_t PROGMEM altmouse[] = { KC_SLSH, KC_ESC, COMBO_END };
 const uint16_t PROGMEM boot[] = { KC_HOME, KC_DEL, COMBO_END };
 combo_t key_combos[] = {
-    COMBO(altmouse, TO(3)),
+    COMBO(altmouse, TO(4)),
     COMBO(boot, QK_BOOT)
 };
 
@@ -61,11 +61,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       OSM_SFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   TT(1),  KC_SPC,     KC_ENT,   TT(2), OSM_ALT
+                                          KC_LGUI,   TT(2),  KC_SPC,     KC_ENT,   TT(3), OSM_ALT
+                                      //`--------------------------'  `--------------------------'
+  ),
+    // Gaming layer so shift responds without delay
+    [1] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,   TO(0),
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                           KC_ESC, _______,  KC_SPC,     KC_ENT, _______, OSM_ALT
                                       //`--------------------------'  `--------------------------'
   ),
 
-    [1] = LAYOUT_split_3x6_3(
+    [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -73,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   TO(3), OSM_ALT
+                                          KC_LGUI, _______,  KC_SPC,     KC_ENT,   TO(4), OSM_ALT
                                       //`--------------------------'  `--------------------------'
   ),
 
-    [2] = LAYOUT_split_3x6_3(
+    [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -85,22 +97,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_CAPS, XXXXXXX, XXXXXXX, MAC_ABR, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   TO(3),  KC_SPC,     KC_ENT, _______, OSM_ALT
+                                          KC_LGUI,   TO(4),  KC_SPC,     KC_ENT, _______, OSM_ALT
                                       //`--------------------------'  `--------------------------'
     ),
 
-    [3] = LAYOUT_split_3x6_3(
+    [4] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, KC_MNXT, KC_BRIU, KC_WH_U, KC_VOLU,                      KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, KC_HOME,  KC_DEL,
+        TO(1), XXXXXXX, KC_MNXT, KC_BRIU, KC_WH_U, KC_VOLU,                      KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, KC_HOME,  KC_DEL,
   //|--------+--------+--------|--------+--------+--------+                    |--------+--------+--------+--------+--------+--------|
       _______, XXXXXXX, KC_MPLY, KC_BRID, KC_WH_D, KC_VOLD,                      KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,  KC_END, XXXXXXX,
   //|--------+--------+--------|--------+--------+--------+                    |--------+--------+--------+--------+--------+--------|
       _______, XXXXXXX, KC_MPRV, KC_WH_L, KC_WH_R, KC_MUTE,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TO(0),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   TO(0), KC_LALT,    KC_BTN1, KC_BTN3, KC_BTN2
-                                      //`--------------------------'  `--------------------------'
-                                      //
-                                      //
+                                  //`--------------------------'  `--------------------------'
+                                  //
+                                  //
   )
 };
 
@@ -213,9 +225,19 @@ void static render_status(void)
 
         oled_set_cursor(0, 1);
 
-        if (get_highest_layer(layer_state) == 3)
-        {
-            oled_write_P(PSTR("Mouse"), true);
+        switch (get_highest_layer(layer_state)) {
+            case 1:
+                oled_write_P(PSTR("Gaming"), true);
+                break;
+            case 2:
+                oled_write_P(PSTR("Left"), true);
+                break;
+            case 3:
+                oled_write_P(PSTR("Right"), true);
+                break;
+            case 4:
+                oled_write_P(PSTR("Mouse"), true);
+                break;
         }
 }
 
