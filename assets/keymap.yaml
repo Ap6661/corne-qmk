@@ -216,5 +216,5 @@ layers:
   - BTN3
   - BTN2
 combos:
-  - { p: [34, 35], k: TO(3), l: [L0]}
-  - { p: [10, 11], k: BOOT, l: [L3]}
+  - { p: [34, 35], k: TO(4), l: [L0]}
+  - { p: [10, 11], k: BOOT, l: [L4]}
