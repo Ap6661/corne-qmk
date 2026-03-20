@@ -38,10 +38,10 @@ layers:
   - /
   - ESC
   - LGUI
-  - {t: L2, h: tap-toggle}
+  - {t: L3, h: tap-toggle}
   - SPC
   - ENT
-  - {t: L3, h: tap-toggle}
+  - {t: L4, h: tap-toggle}
   - OSM ALT
   L1:
   - TAB
@@ -88,6 +88,49 @@ layers:
   - OSM ALT
   L2:
   - TAB
+  - Q
+  - UP
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - LCTL
+  - LEFT
+  - DOWN
+  - RIGHT
+  - F
+  - G
+  - H
+  - Z
+  - X
+  - C
+  - ;
+  - ''''
+  - LSFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: L0, h: toggle}
+  - ESC
+  - {t: ▽, type: trans}
+  - SPC
+  - ENT
+  - {t: ▽, type: trans}
+  - OSM ALT
+  L3:
+  - TAB
   - '1'
   - '2'
   - '3'
@@ -127,9 +170,9 @@ layers:
   - {type: held}
   - SPC
   - ENT
-  - {t: L4, h: toggle}
+  - {t: L5, h: toggle}
   - OSM ALT
-  L3:
+  L4:
   - TAB
   - '!'
   - '@'
@@ -159,7 +202,7 @@ layers:
   - ''
   - '<>'
   - ''
-  - ''
+  - {t: L2, h: toggle}
   - _
   - +
   - '{'
@@ -167,12 +210,12 @@ layers:
   - '|'
   - '~'
   - LGUI
-  - {t: L4, h: toggle}
+  - {t: L5, h: toggle}
   - SPC
   - ENT
   - {type: held}
   - OSM ALT
-  L4:
+  L5:
   - {t: L1, h: toggle}
   - ''
   - MNXT
