@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: crkbd/rev1, qmk_layout: LAYOUT_split_3x6_3}
+layout: {qmk_keyboard: crkbd/rev1, layout_name: LAYOUT_split_3x6_3}
 layers:
   L0:
   - TAB
@@ -260,4 +260,6 @@ layers:
   - BTN2
 combos:
   - { p: [34, 35], k: TO(4), l: [L0]}
+  - { p: [25, 26], k: TO(1), l: [L0]}
+  - { p: [26, 27], k: TO(2), l: [L1]}
   - { p: [10, 11], k: BOOT, l: [L4]}
